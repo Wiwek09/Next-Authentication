@@ -30,11 +30,16 @@ build/Release
 node_modules
 jspm_packages
 
+.env
+
 # Optional npm cache directory
 .npm
 
 # Optional REPL history
 .node_repl_history
 .next
+<<<<<<< HEAD
 
 .env
+=======
+>>>>>>> 06f8ff011e7f00ea8bca995521d4d514a9694079
