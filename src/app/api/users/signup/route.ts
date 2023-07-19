@@ -28,7 +28,7 @@ export async function POST(request:NextRequest){
         })
 
         const savedUser = await newUser.save()
-        console.log(savedUser)
+        console.log(savedUser);
 
         return NextResponse.json({
             message:"User created successfully",
@@ -36,7 +36,7 @@ export async function POST(request:NextRequest){
             savedUser
         })
 
-    } catch (error) {
+    } catch (error:any) {
         return NextResponse.json({error:'Code Error'},{status:404})
     }
 }

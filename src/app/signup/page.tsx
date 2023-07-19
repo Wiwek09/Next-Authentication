@@ -1,4 +1,4 @@
-"use client"
+"use client" 
 import React from 'react'
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -34,7 +34,7 @@ export default function page(){
 
          } catch (error : any) {
             console.log("SignUp failed",error.message);
-            toast.error(error.message)
+            toast.error(`error.message`)
          } finally{
             setLoading(false);
          }
@@ -80,7 +80,7 @@ export default function page(){
             <button
             onClick={onSignUp}
             className='p-2 mb-4 border hover:bg-slate-700 border-gray-200 focus:border-gray-700 focus:outline-none rounded-lg'
-            > {!showbutton ? "Not Sign Up" : " Sign Up" } </button>
+            > {!showbutton ? "No Sign Up" : " Sign Up" } </button>
             
             <Link href={'/login'} >Visit Login Page</Link>
 
