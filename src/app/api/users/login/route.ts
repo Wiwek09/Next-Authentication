@@ -35,7 +35,6 @@ export async function POST(request:NextRequest){
         //Create token
         const token = await jwt.sign(tokenData,process.env.TOKEN_SECRET!, {expiresIn:'1d'})
 
-
         const response =  NextResponse.json({
             messgae:"Login Successful",
             success:true
