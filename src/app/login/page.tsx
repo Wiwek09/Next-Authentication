@@ -4,10 +4,19 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
+import {VscEye,VscEyeClosed} from 'react-icons/vsc'
 
 export default function page(){
  
     const router = useRouter()
+
+    //State for password hide-show
+    const [show, setShow] = React.useState(true)
+
+    const change = () =>{
+        setShow(!show)
+    }
+
     const [user,setUser] = React.useState({
         email:"",
         password:"",
@@ -57,14 +66,19 @@ export default function page(){
             />
 
             <label htmlFor='password'>password</label>
+            <div className='relative' >
             <input
-            className=' input-field '
+            className=' input-field pr-8 '
             id='password'
-            type='password'
+            type={show ? 'password' : 'text'}
             value={user.password}
             onChange={(e) => setUser({...user, password:e.target.value})}
             placeholder='password'
             />
+            <div className='absolute right-2 top-[1rem] text-black cursor-pointer' onClick={change} >
+            { show ? <VscEyeClosed/> : <VscEye/>}
+            </div>
+            </div>
             
             <button
             onClick={onLogin}
