@@ -52,15 +52,17 @@ export default function page(){
     },[user])
 
     return(
-        <div className='flex flex-col gap-1 items-center justify-center min-h-screen py-2 ' >
+        <>
+        <form className='flex flex-col gap-1 items-center justify-center min-h-screen py-2 ' >
             <h1 className='text-3xl font-bold'>{loading ? "loading"  : "Login" }</h1>
             <hr/>
             <label htmlFor='email'>email</label>
             <input
             className=' input-field '
             id='email'
-            type='text'
+            type='email'
             value={user.email}
+            required
             onChange={(e) => setUser({...user, email:e.target.value})}
             placeholder='email'
             />
@@ -70,6 +72,7 @@ export default function page(){
             <input
             className=' input-field pr-8 '
             id='password'
+            required
             type={show ? 'password' : 'text'}
             value={user.password}
             onChange={(e) => setUser({...user, password:e.target.value})}
@@ -87,6 +90,7 @@ export default function page(){
             
             <Link href={'/signup'} >Visit Sign Up Page</Link>
 
-        </div>
+        </form>
+        </>
     )
 }
