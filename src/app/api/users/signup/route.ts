@@ -40,8 +40,6 @@ export async function POST(request:NextRequest){
             savedUser
         })
 
-
-
     } catch (error:any) {
         return NextResponse.json({error:'Code Error'},{status:404})
     }
